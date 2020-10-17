@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<title>ListMovie</title>
+	<link rel="stylesheet" type="text/css" href="{% static "movieapp/css/listmovie.css" %}">
+</head>
+<body>
+	<h1>Details of the Movie</h1>
+	{% if list_movie %}
+	<table border='1' align="center">
+		<tr>
+			<th>MovieName</th>
+			<th>ReleaseDate</th>
+			<th>HeroName</th>
+			<th>HeroinName</th>
+			<th>MovieLanguage</th>
+			<th>Actions</th>
+		</tr>
+		{% for data in list_movie %}
+		<tr>
+			<td>{{ data.movie_name }}</td>
+			<td>{{ data.release_date }}</td>
+			<td>{{ data.hero_name}}</td>
+			<td>{{ data.heroin_name }}</td>
+			<td>{{ data.language }}</td>
+			<td><a href="">Delete</a> <a href="">Upadte</a></td>
+		</tr>
+			
+		{% endfor %}
+	</table>
+		
+	{% endif %}
+
+</body>
+</html>
